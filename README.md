@@ -129,3 +129,37 @@ while (not enforcou and not acertou):
     print("Jogando...")
 # Resto do código...
 ```
+
+# Estrutura de dados: List
+```python
+>>> valores = [0,1,2,3,5] # Declaração de uma lista de números.
+>>> type(valores) # O tipo de dados da lista é 'list'.
+<class 'list'>
+>>> 3 in valores
+True
+>>> 9 in valores
+False
+>>> valores[0] # O elemento na posição zero é 0.
+0
+>>> valores[4] # O elemento na quarta posição é 5.
+5
+>>> min(valores) # Menor elemento da lista.
+0
+>>> max(valores) # Maior elemento da lista.
+5
+>>> len(valores) # Length, número de elementos da lista.
+5
+>>> valores.append(7) # Acrescenta um elemento à lista.
+>>> valores
+[0, 1, 2, 3, 5, 7]
+>>> valores.pop() # Remove e retorna o último elemento da lista
+7
+>>> valores
+[0, 1, 2, 3, 5]
+
+>>> "n" in "banana" # Strings são tipos sequenciais.
+True
+>>> "x" in "banana" # O operador "in" testa a existência de um elemento em uma sequência.
+False
+
+```
