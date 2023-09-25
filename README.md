@@ -311,3 +311,18 @@ TypeError: 'set' object is not subscriptable
 3
 >>> 
 ```
+
+# Para saber mais: Dictionary
+Dicionários em Python são a mesma coisa que arrays associativos em PHP: são conjuntos formados por pares de chave/valor. A notação para criar dicionários é quase a mesma para os sets (só que nesses últimos cada entrada é um valor único, e não um par chave/valor): 
+
+```python
+>>> idades_instrutor = {    # Mesma notação dos sets...
+...     'Nico' : 39,        # Mas cada elemento é um key/value pair...
+...     'Flavio' : 37,      # A chave e o valor são separados por dois pontos.
+... }                       # E os pares são separados por vírgulas, assim como nos sets.
+>>> idades_instrutor
+{'Nico': 39, 'Flavio': 37}
+>>> type(idades_instrutor)
+<class 'dict'>
+>>>
+```
