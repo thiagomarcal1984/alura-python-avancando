@@ -448,3 +448,51 @@ Código Python para escrever em arquivos:
 > ```python
 > logo2 = open('logo.png', 'wb+') # Escreve e lê em binário.
 > ```
+
+# Lendo um arquivo
+Código Python para leitura de arquivos:
+```python
+>>> arquivo = open('palavras.txt', 'r', encoding='UTF-8')
+>>> arquivo.write('Tentei escrever') 
+# Não funciona, porque usamos o modo 'r' de leitura.
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+io.UnsupportedOperation: not writable
+>>> arquivo.read() 
+# Lê o arquivo inteiro.
+'banana\nmelancia\nmorango\nmaçã\n'
+>>> arquivo.read() 
+# Depois que se lê tudo, não há mais o que ler.
+''
+>>>
+```
+
+Lendo um arquivo linha a linha:
+```python
+>>> arquivo = open('palavras.txt', 'r', encoding='UTF-8')
+>>> for linha in arquivo:
+...     print(linha, end='') 
+... 
+# Cada linha no arquivo já tem uma quebra com /n.
+# Por isso o parâmentro end='' na função print.
+banana
+melancia
+morango
+maçã
+>>> arquivo.close()
+```
+> Uma alternativa para ler condicionalmente o arquivo é usar função `arquivo.readline()`:
+> ```python
+> >>> arquivo = open('palavras.txt', 'r', encoding='UTF-8')
+> >>> arquivo.readline() 
+> # O resultado é a leitura da primeira linha com os caracteres não imprimíveis.
+> 'banana\n'
+> >>> arquivo.readline().strip() 
+> # Faz nova leitura, mas a função strip remove a quebra de linha '\n'.
+> 'melancia'
+> >>> fruta = arquivo.readline().strip() 
+> # Armazena a terceira linha sem quebra na variável fruta.
+> >>> fruta
+> 'morango'
+> >>>
+> ```
