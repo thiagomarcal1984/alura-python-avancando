@@ -414,3 +414,37 @@ Outro uso de compreensões de lista é usar uma condição no fim da declaraçã
 >>> lista_pares
 [0, 2, 4, 6, 8]
 ```
+
+# Escrevendo em um arquivo
+Código Python para escrever em arquivos:
+```python
+# O parâmetro encoding não é obrigatório, mas é bom 
+# usar para a codificação UTF-8 (com acentuação).
+# O parâmetro 'w' é para apagar o arquivo e reescrevê-lo.
+>>> arquivo = open('palavras.txt', 'w', encoding='UTF-8')
+>>> arquivo.write('banana\n') # \n para forçar a quebra de linha.
+7 # Foram escritos 7 caracteres, incluindo a quebra.
+>>> arquivo.write('melancia\n')
+9 # Foram escritos 9 caracteres, incluindo a quebra.
+>>> arquivo.close() # Escreve tudo no arquivo, e o libera arquivo para outros programas.
+# O parâmetro 'a' é para acrescentar linhas ao arquivo, sem reescrevê-lo.
+>>> arquivo = open('palavras.txt', 'a', encoding='UTF-8')
+>>> arquivo.write('morango\n') 
+8 # Foram escritos 8 caracteres, incluindo a quebra.
+>>> arquivo.write('maçã\n')    
+5 # Foram escritos 5 caracteres, incluindo a quebra.
+>>> arquivo.close() # Fecha/libera o arquivo.
+>>> 
+```
+> Ainda há o modo de escrita exclusiva ('x'): se o arquivo existir, o Python lança um erro:
+> ```python
+> >>> arquivo = open('palavras.txt', 'x') 
+> Traceback (most recent call last):
+>   File "<stdin>", line 1, in <module>
+> FileExistsError: [Errno 17] File exists: 'palavras.txt'
+> >>>
+> ```
+> Para arquivos binários, usamos a letra 'b' depois de um dos outros modificadores ('w', 'a', 'x' e 'r'). Para arquivos texto, o 'b' pode ser substituído pelo 't' ou omitido. Ainda é possível acrescentar o caracter '+' para acrescentar o modificador de leitura à escrita ('x', 'w' ou 'a') ou o modificador de escrita à leitura ('r'):
+> ```python
+> logo2 = open('logo.png', 'wb+') # Escreve e lê em binário.
+> ```
