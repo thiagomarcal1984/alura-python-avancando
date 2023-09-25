@@ -163,3 +163,37 @@ True
 False
 
 ```
+
+# Guardando as letras acertadas
+Adaptação do código `forca.py` para incluir os recursos de lista mostrados na aula anterior:
+```python
+def jogar():
+    print("*********************************")
+    print("***Bem vindo ao jogo da Forca!***")
+    print("*********************************")
+
+    palavra_secreta = "banana"
+    letras_acertadas = ["_", "_", "_", "_", "_", "_"]
+
+    enforcou = False
+    acertou = False
+
+    print(letras_acertadas) # Imprime a lista.
+
+    while (not enforcou and not acertou):
+        chute = input("Qual letra? ")
+        chute = chute.strip()
+        
+        index = 0
+        for letra in palavra_secreta:
+            if (letra.upper() == chute.upper()):
+                # print(f"Achou a letra {letra} na posição {index}!")
+                letras_acertadas[index] = letra # Troca a letra na posição atual.
+            index += 1
+        print(letras_acertadas)
+
+    print("Fim do jogo")
+
+if(__name__ == "__main__"):
+        jogar()
+```
