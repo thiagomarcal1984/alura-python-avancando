@@ -240,3 +240,21 @@ else:
 ```
 Assim temos certeza que a fruta_buscada está dentro da lista antes de perguntarmos o seu índice, evitando assim de receber um erro no console.
 
+# O que são tuplas?
+Strings, listas, ranges (sim, ranges) e tuplas são tipos sequenciais.
+
+> Tuplas são listas imutáveis.
+```python
+>>> tupla = (1, 2, 3) 
+>>> type(tupla) 
+<class 'tuple'>
+>>> tupla.append(4)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: 'tuple' object has no attribute 'append'
+>>> tupla.pop()     
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: 'tuple' object has no attribute 'pop'
+>>>
+```
