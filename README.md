@@ -326,3 +326,51 @@ Dicionários em Python são a mesma coisa que arrays associativos em PHP: são c
 <class 'dict'>
 >>>
 ```
+
+# Estipulando tentativas de erros
+Mudanças no código do arquivo `forca.py`:
+```python
+def jogar():
+    print("*********************************")
+    print("***Bem vindo ao jogo da Forca!***")
+    print("*********************************")
+
+    palavra_secreta = "banana".upper()
+    letras_acertadas = ["_", "_", "_", "_", "_", "_"]
+
+    enforcou = False
+    acertou = False
+    erros = 0
+
+    print(letras_acertadas)
+
+    while (not enforcou and not acertou):
+        chute = input("Qual letra? ")
+        chute = chute.strip().upper()
+        
+        if (chute in palavra_secreta): # Teste de erros/acertos.
+            index = 0
+            for letra in palavra_secreta:
+                if (chute == letra):
+                    letras_acertadas[index] = letra
+                index += 1
+        else:
+            erros += 1
+
+        # Nenhum caracter em letras_acertadas dever ser um underscore.
+        acertou = "_" not in letras_acertadas
+        # Limitar o jogo a 6 tentativas.
+        enforcou = erros == 6
+
+        print(letras_acertadas)
+
+    if (acertou): # Resultado do jogo.
+         print("Você ganhou!!!")
+    else:
+         print("Você perdeu!!!")
+
+    print("Fim do jogo")
+
+if(__name__ == "__main__"):
+        jogar()
+```
