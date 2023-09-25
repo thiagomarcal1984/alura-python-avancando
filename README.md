@@ -286,3 +286,28 @@ As funções `list()` e `tuple()` servem para converter tuplas para lista e vice
 ['a', 'b', 'c']
 >>>
 ```
+
+# Para saber mais: Set
+Listas e tuplas permitem duplicidade de dados, além de possuírem um índice (ordem de aparição na estrutura de dados).
+
+Mas há no Python o tipo de dados chamado `set`, que não tem índice e não permite inserção de dados duplicados. Os conjuntos são declarados usando chaves ({}).
+
+```python
+>>> conj = {1} # Conjuntos vazios são declarados usando a função set({}).
+>>> conj.add(2) # Tipos sequenciais usam append; sets usam add.
+>>> conj.add(3) # Acrescentando o elemento 2 ao conjunto.
+>>> conj.add(1) # O elemento 1 não será reinserido, porque já existe.
+>>> conj
+{1, 2, 3}
+>>> conj[0] # Sets não tem índice.
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'set' object is not subscriptable
+>>> for i in conj:
+...     print(i) # Não há garantia de que o conjunto será apresentado na ordem de inserção.
+... 
+1
+2
+3
+>>> 
+```
