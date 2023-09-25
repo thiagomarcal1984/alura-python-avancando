@@ -374,3 +374,43 @@ def jogar():
 if(__name__ == "__main__"):
         jogar()
 ```
+
+# Compreensão de lista
+Como converter a palavra_secreta para uma lista de mesmo tamanho composta só por underscores? Uma forma é:
+
+```python
+>>> word = "maca"
+>>> lista = []
+>>> for letra in word:
+...     lista.append('_')
+... 
+>>> lista
+['_', '_', '_', '_']
+>>>
+```
+Mas existe o conceito de compreensão de lista, que abrevia códigos de loops em uma única linha:
+```python
+palavra = 'abacate' # Sete letras.
+>>> # A sintaxe é: [ retorno_individual for elemento in sequencial ]
+lista = [ '_' for letra in palavra ] 
+>>> lista
+['_', '_', '_', '_', '_', '_', '_']
+>>> len(lista)
+7
+>>> # Para usar compreensão de sets, use {} ao invés de [].
+>>> conj = { f'Letra {i}' for i in palavra } 
+>>> palavra # Sete letras com repetição.
+'abacate'
+>>> conj # Cinco elementos de conjunto, sem repetição e desordenado.
+{'Letra a', 'Letra t', 'Letra c', 'Letra b', 'Letra e'}
+>>>
+```
+
+Outro uso de compreensões de lista é usar uma condição no fim da declaração da lista comprehension:
+```python
+>>> inteiros = range(10) # Elementos de zero a nove.
+>>> # Repare no if depois do loop: if n % 2 == 0.
+>>> lista_pares = [ n for n in inteiros if n % 2 == 0 ]
+>>> lista_pares
+[0, 2, 4, 6, 8]
+```
