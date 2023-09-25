@@ -258,3 +258,31 @@ Traceback (most recent call last):
 AttributeError: 'tuple' object has no attribute 'pop'
 >>>
 ```
+
+# Listas e tuplas juntas
+Pontos podem ter boa representação como tuplas:
+```python
+>>> ponto = (2, 5)
+>>> p1 = (3,5)
+>>> p2 = (4,6)
+>>> p3 = (5,7)
+>>> line = [p1, p2, p3]
+>>> line # Uma lista de tuplas que representam pontos em linha.
+[(3, 5), (4, 6), (5, 7)] 
+>>>
+```
+
+Strings, tuplas e range são imutáveis. Lista é um tipo sequencial mutável.
+
+As funções `list()` e `tuple()` servem para converter tuplas para lista e vice-versa:
+```python
+>>> lista = ['a', 'b', 'c']
+>>> tupla = tuple(lista)
+>>> tupla
+('a', 'b', 'c')
+>>> lista = []
+>>> lista = list(tupla)
+>>> lista
+['a', 'b', 'c']
+>>>
+```
