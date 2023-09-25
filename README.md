@@ -95,3 +95,37 @@ def jogar():
 if(__name__ == "__main__"):
         jogar()
 ```
+# Funções importantes da String
+```python
+>>> "banana".startswith('ba') # Retorna True se palavra começa com 'ba'.
+>>> True
+>>> "banana".endswith('na') # Retorna True se palavra termina com 'na'.
+>>> True
+>>> 'banana'.endswith('XP') # Retorna False se a palavra não termina com 'XP'.
+>>> False
+>>> 'banana'.capitalize() # Retorna string com inicial maiúscula.
+'Banana'
+>>> 'banana'.upper() # Retorna string toda em maiúscula.
+'BANANA'
+>>> 'BANANA'.lower() # Retorna string toda em minúscula.
+'banana'
+>>> '   abc   '.strip() # Retorna string sem espaços nos extremos.
+'abc'
+>>>
+```
+
+Aplicações das funções no código `forca.py`:
+```python
+# Resto do código...
+while (not enforcou and not acertou):
+    chute = input("Qual letra? ")
+    chute = chute.strip() # Remove espaços dos extremos com strip().
+    
+    index = 0
+    for letra in palavra_secreta:
+        if (letra.upper() == chute.upper()): # Coloca as letras em maiúsculas.
+            print(f"Achou a letra {letra} na posição {index}!")
+        index += 1
+    print("Jogando...")
+# Resto do código...
+```
