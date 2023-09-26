@@ -496,3 +496,32 @@ maçã
 > 'morango'
 > >>>
 > ```
+
+# Escolhendo uma palavra
+Modificações no código do arquivo `forca.py`:
+```python
+import random
+
+def jogar():
+    # resto do código
+
+    arquivo = open('palavras.txt','r', encoding='UTF-8')
+    palavras = []
+
+    for linha in arquivo:
+        linha = linha.strip()
+        palavras.append(linha)
+    arquivo.close()
+
+    numero = random.randrange(0, len(palavras))
+    palavra_secreta = palavras[numero].upper()
+
+    # resto do código
+```
+> Um bloco com a palavra `with` garante que o arquivo será fechado, mesmo que ocorra um erro durante a execução do uso do arquivo dentro do bloco:
+> ```python
+> with open('palavras.txt','r', encoding='UTF-8') as arquivo:
+>     for linha in arquivo:
+>         linha = linha.strip()
+>         palavras.append(linha)
+> ```
