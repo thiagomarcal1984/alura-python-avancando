@@ -667,3 +667,6 @@ def imprime_mensagem_perdedor():
 if(__name__ == "__main__"):
     jogar()
 ```
+
+# Melhorando a apresentação da forca
+As funções `desenha_forca(erros)`, `imprime_mensagem_vencedor()` e `imprime_mensagem_perdedor(palavra_secreta)` foram inseridas no arquivo `forca.py`. Nada demais a observar.
